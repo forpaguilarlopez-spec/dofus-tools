@@ -1,0 +1,19 @@
+{
+  "tasks": [
+    {
+      "id": 1,
+      "texto": "Manojo de llaves (dungeon diario)",
+      "hecho": true
+    },
+    {
+      "id": 2,
+      "texto": "Sesión de minería",
+      "hecho": false
+    },
+    {
+      "id": 3,
+      "texto": "Craftear Anillos Ágil",
+      "hecho": false
+    }
+  ]
+}
