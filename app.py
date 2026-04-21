@@ -1,4 +1,4 @@
-from flask import Flask
+from flask import Flask, render_template
 import json
 import os
 
@@ -17,7 +17,7 @@ def guardar_datos(datos):
 @app.route('/')
 def inicio():
     datos = leer_datos()
-    return str(datos)
+    return render_template('index.html', tareas=datos['tasks'])
 
 @app.route('/toggle/<int:id>', methods=['POST'])
 def toggle(id):

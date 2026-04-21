@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>DOFUS Tools</title>
+  <style>
+    body { font-family: sans-serif; max-width: 600px; margin: 40px auto; }
+    .hecho { text-decoration: line-through; color: gray; }
+    li { margin: 10px 0; cursor: pointer; }
+  </style>
+</head>
+<body>
+  <h1>Checklist diaria</h1>
+  <ul>
+    {% for tarea in tareas %}
+      <li class="{{ 'hecho' if tarea.hecho else '' }}"
+          onclick="toggle({{ tarea.id }})">
+        {{ tarea.texto }}
+      </li>
+    {% endfor %}
+  </ul>
+
+  <script>
+    function toggle(id) {
+      fetch('/toggle/' + id, { method: 'POST' })
+        .then(() => location.reload())
+    }
+  </script>
+</body>
+</html>
